@@ -8,23 +8,18 @@ var cors = require("cors");
 const fs = require("fs");
 
 require("dotenv").config()
-// // MongoDsB
-// mongoose
-//   .connect("mongodb://localhost:27017/jobPortal", {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     useCreateIndex: true,
-//     useFindAndModify: false,
-//   })
-//   .then((res) => console.log("Connected to DB.."))
-//   .catch((err) => console.log(err));
-
-
-const db = require('./config/keys').mongoURI;
+// MongoDsB
 mongoose
-  .connect( db,{ useNewUrlParser: true ,useUnifiedTopology: true, useFindAndModify: false})
-  .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.log(err));
+  .connect("mongodb+srv://harishsriramula967:Harish@123@cluster1.qxgdfxz.mongodb.net/jobportal2", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  })
+  .then((res) => console.log("Connected to DB.."))
+  .catch((err) => console.log(err));
+
+
 
 // initialising directories
 if (!fs.existsSync("./public")) {
